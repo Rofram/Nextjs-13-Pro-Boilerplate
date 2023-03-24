@@ -1,0 +1,22 @@
+/// <reference types="vitest" />
+
+import { defineConfig } from 'vitest/config'
+import react from '@vitejs/plugin-react'
+import tsconfigPaths from 'vite-tsconfig-paths'
+import svgr from "vite-plugin-svgr";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react(), tsconfigPaths(), svgr()],
+  test: {
+    environment: 'jsdom', // or 'happy-dom', 'node'
+    globals: true,
+    dir: './tests/unit',
+    coverage: {
+      provider: 'c8', // or 'istanbul'
+      reportsDirectory: './coverage',
+    },
+    setupFiles: ['./tests/setup.ts'],
+    reporters: ['html', 'basic'],
+  },
+})
