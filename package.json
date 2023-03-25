@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "test": "vitest run",
     "test:cov": "vitest run --coverage",
@@ -20,6 +21,7 @@
   },
   "dependencies": {
     "next": "13.2.4",
+    "next-sitemap": "^4.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-query": "^3.39.3"
@@ -45,7 +47,6 @@
     "@vitest/ui": "^0.29.7",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^8.3.0",
-    "cross-env": "^7.0.3",
     "css-loader": "^6.7.3",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
