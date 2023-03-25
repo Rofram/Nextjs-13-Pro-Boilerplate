@@ -1,13 +1,13 @@
 import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(ts|tsx)"],
+  stories: ["../src/stories/*.mdx", "../src/stories/*.stories.@(ts|tsx)"],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials", "@storybook/addon-interactions"],
   framework: {
     name: "@storybook/nextjs",
     options: {}
   },
-  webpackFinal: async config => {
+  webpackFinal: async (config) => {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module?.rules?.find((rule) => {
       const test = (rule as { test: RegExp }).test

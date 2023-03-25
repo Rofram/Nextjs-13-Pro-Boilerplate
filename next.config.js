@@ -2,6 +2,7 @@
 const nextConfig = {
   experimental: {
     appDir: true,
+    webVitalsAttribution: ['CLS', 'LCP'],
   },
   webpack(config) {
     config.module.rules.push({

@@ -17,6 +17,6 @@ export default defineConfig({
       reportsDirectory: './coverage',
     },
     setupFiles: ['./tests/setup.ts'],
-    reporters: ['html', 'basic'],
+    reporters: ['html', 'verbose'],
   },
 })
